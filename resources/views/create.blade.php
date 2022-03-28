@@ -16,6 +16,17 @@
         <h2>Register</h2>
 
 
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
+
 
         <form action="<?php echo url('User/Store');?>" method="post" enctype="multipart/form-data">
 
@@ -25,14 +36,14 @@
             <div class="form-group">
                 <label for="exampleInputName">Name</label>
                 <input type="text" class="form-control"  id="exampleInputName" aria-describedby="" name="name"
-                    placeholder="Enter Name">
+                    placeholder="Enter Name"   value="<?php echo old('name');?>">
             </div>
 
 
             <div class="form-group">
                 <label for="exampleInputEmail">Email address</label>
                 <input type="email" class="form-control"  id="exampleInputEmail1" aria-describedby="emailHelp"
-                    name="email" placeholder="Enter email">
+                    name="email" placeholder="Enter email" value="<?php echo old('email');?>">
             </div>
 
             <div class="form-group">
