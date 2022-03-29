@@ -53,9 +53,17 @@ Route::get('User/Display',[userController::class,'UserData']);
 
 ##################################################################################################
 # Students Routes ....
+Route::get('Student/',[studentController::class,'index']);
 Route::get('Student/Create',[studentController::class,'Create']);
 Route::post('Student/Store',[studentController::class,'Store']);
+Route::get('Student/Remove/{id}',[studentController::class,'delete']);
+Route::get('Student/Edit/{id}',[studentController::class,'edit']);
+Route::post('Student/Update/{id}',[studentController::class,'update']);
 
+# Auth .....
+Route::get('/Login',[studentController::class,'login']);
+Route::post('/DoLogin',[studentController::class,'doLogin']);
+Route::get('/Student/logOut',[studentController::class,'logOut']);
 
 
 
