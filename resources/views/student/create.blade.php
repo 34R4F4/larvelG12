@@ -28,7 +28,7 @@
 
 
 
-        <form action="{{ url('User/Store') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ url('Student/Store') }}" method="post" enctype="multipart/form-data">
 
 
            @csrf

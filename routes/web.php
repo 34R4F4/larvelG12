@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\studentController;
 use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,6 +42,21 @@ Route::get('/', function () {
 Route::get('UserMessage',[userController::class,'Message']);
 Route::get('User/Create',[userController::class,'create']);
 Route::post('User/Store',[userController::class,'store']);
+Route::get('User/Display',[userController::class,'UserData']);
+
+
+
+//  Route::get('test',function(){
+//     echo 'test message';
+//  });
+
+
+##################################################################################################
+# Students Routes ....
+Route::get('Student/Create',[studentController::class,'Create']);
+Route::post('Student/Store',[studentController::class,'Store']);
+
+
 
 
 

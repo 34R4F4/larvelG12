@@ -82,12 +82,33 @@ class userController extends Controller
         "email"    => "required|email"
 
       ]);
-
-
        dd($data);
-
-
         }
+
+
+
+
+##########################################################################################################
+
+
+public function UserData(){
+
+   $data = ["name" => "Root" , "age" => 20 , "Level" => 3 ];
+
+   $title = "Student Data ";
+
+
+    // return view('info',["data" => $data , "title" => $title]);
+
+    //  return view('info')->with(["data" => $data , "title" => $title]);  //   return view('info')->with('data',$data)->with('title',$title);
+
+      return view('info',compact('data','title'));     // ['data' => $data , 'title' => $title]
+
+}
+
+
+
+
 
 
 
